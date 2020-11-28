@@ -1,9 +1,10 @@
 import warnings
 import os
+import sys
 
 warnings.filterwarnings("ignore")
 
-from dejavu.dejavu import Dejavu
+from dejavu import Dejavu
 from dejavu.recognize import FileRecognizer
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -41,6 +42,6 @@ def song_rater(rec_audio):
 
 
 
-rec_audio = BASE_DIR + "/rater/tmp/test.mp3"
+rec_audio = (BASE_DIR).replace("\\","/") + "/rater/tmp/test.mp3"
 print(song_rater(rec_audio))
 
